@@ -38,6 +38,17 @@ environments:
         secret:
           name: webhook-secret-stage-frontend-app
           namespace: cicd
+    - name: backend-app
+      pipelines:
+        integration:
+          bindings:
+          - stage-full-stack-backend-app-binding
+          - github-push-binding
+      source_url: https://github.com/ishitasequeira/backend-app.git
+      webhook:
+        secret:
+          name: webhook-secret-stage-backend-app
+          namespace: cicd
   name: stage
   pipelines:
     integration:
