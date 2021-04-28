@@ -12,7 +12,7 @@ spec:
   - name: http
     port: 8080
     protocol: TCP
-    targetPort: 8080
+    targetPort: 4021
   selector:
     app.kubernetes.io/name: backend-app
     app.kubernetes.io/part-of: full-stack
