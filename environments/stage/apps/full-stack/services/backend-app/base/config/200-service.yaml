@@ -10,9 +10,9 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 8080
+    port: 4021
     protocol: TCP
-    targetPort: 4021
+    targetPort: 8080
   selector:
     app.kubernetes.io/name: backend-app
     app.kubernetes.io/part-of: full-stack
