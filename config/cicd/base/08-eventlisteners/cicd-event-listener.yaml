@@ -41,6 +41,22 @@ spec:
     name: app-ci-build-from-push-taxi
     template:
       name: app-ci-template
+  - bindings:
+    - ref: stage-full-stack-frontend-app-binding
+    - ref: github-push-binding
+    interceptors:
+    - github:
+        secretRef:
+          secretKey: webhook-secret-key
+          secretName: webhook-secret-stage-frontend-app
+    - cel:
+        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name == 'ishitasequeira/frontend-app')
+        overlays:
+        - expression: body.ref.split('/')[2]
+          key: ref
+    name: app-ci-build-from-push-frontend-app
+    template:
+      name: app-ci-template
 status:
   configuration:
     generatedName: ""

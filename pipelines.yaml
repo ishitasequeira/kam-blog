@@ -24,6 +24,25 @@ environments:
       bindings:
       - github-push-binding
       template: app-ci-template
-- name: stage
+- apps:
+  - name: full-stack
+    services:
+    - name: frontend-app
+      pipelines:
+        integration:
+          bindings:
+          - stage-full-stack-frontend-app-binding
+          - github-push-binding
+      source_url: https://github.com/ishitasequeira/frontend-app.git
+      webhook:
+        secret:
+          name: webhook-secret-stage-frontend-app
+          namespace: cicd
+  name: stage
+  pipelines:
+    integration:
+      bindings:
+      - github-push-binding
+      template: app-ci-template
 gitops_url: https://github.com/ishitasequeira/kam-blog.git
 version: 1
