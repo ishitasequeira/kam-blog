@@ -1,4 +1,4 @@
 bases:
 - overlays
 commonLabels:
-  app.openshift.io/vcs-source: ishitasequeira/gitops
+  app.openshift.io/vcs-source: ishitasequeira/kam-blog

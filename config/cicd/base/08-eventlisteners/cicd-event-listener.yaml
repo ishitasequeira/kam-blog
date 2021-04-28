@@ -18,7 +18,7 @@ spec:
           secretKey: webhook-secret-key
           secretName: gitops-webhook-secret
     - cel:
-        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name == 'ishitasequeira/gitops')
+        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name == 'ishitasequeira/kam-blog')
         overlays:
         - expression: body.ref.split('/')[2]
           key: ref

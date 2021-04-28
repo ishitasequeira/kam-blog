@@ -36,7 +36,7 @@ spec:
   project: default
   source:
     path: config/argocd
-    repoURL: https://github.com/ishitasequeira/gitops.git
+    repoURL: https://github.com/ishitasequeira/kam-blog.git
   syncPolicy:
     automated:
       prune: true

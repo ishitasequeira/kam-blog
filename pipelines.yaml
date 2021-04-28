@@ -25,5 +25,5 @@ environments:
       - github-push-binding
       template: app-ci-template
 - name: stage
-gitops_url: https://github.com/ishitasequeira/gitops.git
+gitops_url: https://github.com/ishitasequeira/kam-blog.git
 version: 1
