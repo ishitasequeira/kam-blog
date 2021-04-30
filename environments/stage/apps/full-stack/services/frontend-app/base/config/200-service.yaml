@@ -13,6 +13,7 @@ spec:
     port: 8080
     protocol: TCP
     targetPort: 8080
+  type: LoadBalancer
   selector:
     app.kubernetes.io/name: frontend-app
     app.kubernetes.io/part-of: full-stack
