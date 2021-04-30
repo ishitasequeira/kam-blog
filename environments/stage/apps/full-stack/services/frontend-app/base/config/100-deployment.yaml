@@ -27,13 +27,6 @@ spec:
         name: frontend-app
         ports:
         - containerPort: 8080
-        resources: {}
-        env:
-        - name: COMPONENT_BACKEND_HOST
-          value: backend-app
-        - name: COMPONENT_BACKEND_PORT
-          valueFrom:
-            fieldRef:
-              fieldPath: backend-app.PORT 
+        resources: {} 
       serviceAccountName: default
 status: {}
