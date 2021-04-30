@@ -27,6 +27,6 @@ spec:
         name: backend-app
         ports:
         - containerPort: 8080
-        resources: {}
+        resources: {}       
       serviceAccountName: default
 status: {}
