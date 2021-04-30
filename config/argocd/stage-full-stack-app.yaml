@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: full-stack
+  name: stage-full-stack
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: stage
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: environments/stage/apps/full-stack/overlays
+    repoURL: https://github.com/ishitasequeira/kam-blog.git
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+status:
+  health: {}
+  summary: {}
+  sync:
+    comparedTo:
+      destination: {}
+      source:
+        repoURL: ""
+    status: ""
