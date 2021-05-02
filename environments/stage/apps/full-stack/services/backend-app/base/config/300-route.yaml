@@ -5,7 +5,6 @@ metadata:
   name: backend-app
   namespace: stage
 spec:
-  hostname: backend-app.stage.svc
   port:
     targetPort: 8080
   to:
