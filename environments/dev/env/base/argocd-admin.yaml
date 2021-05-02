@@ -10,5 +10,5 @@ roleRef:
   name: admin
 subjects:
 - kind: ServiceAccount
-  name: openshift-gitops-application-controller
+  name: openshift-gitops-argocd-application-controller
   namespace: openshift-gitops
