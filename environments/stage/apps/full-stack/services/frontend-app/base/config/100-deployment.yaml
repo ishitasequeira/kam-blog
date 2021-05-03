@@ -26,7 +26,7 @@ spec:
         imagePullPolicy: Always
         name: frontend-app
         ports:
-        - containerPort: 8080
+        - containerPort: 4200
         resources: {} 
       serviceAccountName: default
 status: {}
