@@ -6,7 +6,7 @@ metadata:
   namespace: stage
 spec:
   port:
-    targetPort: 8080
+    targetPort: 8081
   to:
     kind: Service
     name: backend-app
