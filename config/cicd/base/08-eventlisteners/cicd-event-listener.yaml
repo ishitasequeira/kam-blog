@@ -24,7 +24,7 @@ spec:
           key: ref
     name: ci-dryrun-from-push
     template:
-      name: ci-dryrun-from-push-template
+      ref: ci-dryrun-from-push-template
   - bindings:
     - ref: dev-app-taxi-taxi-binding
     - ref: github-push-binding
@@ -40,7 +40,7 @@ spec:
           key: ref
     name: app-ci-build-from-push-taxi
     template:
-      name: app-ci-template
+      ref: app-ci-template
   - bindings:
     - ref: stage-full-stack-frontend-app-binding
     - ref: github-push-binding
@@ -56,7 +56,7 @@ spec:
           key: ref
     name: app-ci-build-from-push-frontend-app
     template:
-      name: app-ci-template
+      ref: app-ci-template
   - bindings:
     - ref: stage-full-stack-backend-app-binding
     - ref: github-push-binding
@@ -72,7 +72,7 @@ spec:
           key: ref
     name: app-ci-build-from-push-backend-app
     template:
-      name: app-ci-template
+      ref: app-ci-template
 status:
   configuration:
     generatedName: ""
