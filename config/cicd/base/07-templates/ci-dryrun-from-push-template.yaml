@@ -18,7 +18,7 @@ spec:
     kind: PipelineRun
     metadata:
       creationTimestamp: null
-      name: ci-dryrun-from-push-pipeline-$(uid)
+      name: ci-dryrun-from-push-$(uid)
     spec:
       pipelineRef:
         name: ci-dryrun-from-push-pipeline

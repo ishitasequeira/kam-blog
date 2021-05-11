@@ -18,7 +18,8 @@ spec:
           secretKey: webhook-secret-key
           secretName: gitops-webhook-secret
     - cel:
-        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name == 'ishitasequeira/kam-blog')
+        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name
+          == 'ishitasequeira/kam-blog')
         overlays:
         - expression: body.ref.split('/')[2]
           key: ref
@@ -34,7 +35,8 @@ spec:
           secretKey: webhook-secret-key
           secretName: webhook-secret-dev-taxi
     - cel:
-        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name == 'ishitasequeira/taxi')
+        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name
+          == 'ishitasequeira/taxi')
         overlays:
         - expression: body.ref.split('/')[2]
           key: ref
@@ -50,7 +52,8 @@ spec:
           secretKey: webhook-secret-key
           secretName: webhook-secret-stage-frontend-app
     - cel:
-        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name == 'ishitasequeira/frontend-app')
+        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name
+          == 'ishitasequeira/frontend-app')
         overlays:
         - expression: body.ref.split('/')[2]
           key: ref
@@ -66,7 +69,8 @@ spec:
           secretKey: webhook-secret-key
           secretName: webhook-secret-stage-backend-app
     - cel:
-        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name == 'ishitasequeira/backend-app')
+        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name
+          == 'ishitasequeira/backend-app')
         overlays:
         - expression: body.ref.split('/')[2]
           key: ref
