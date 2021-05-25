@@ -1,0 +1,13 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  creationTimestamp: null
+  name: stage-full-stack-backend-service-binding
+  namespace: cicd
+spec:
+  params:
+  - name: imageRepo
+    value: quay.io/isequeir/image-repo
+  - name: tlsVerify
+    value: "true"
+status: {}
