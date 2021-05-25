@@ -27,27 +27,27 @@ environments:
 - apps:
   - name: full-stack
     services:
-    - name: frontend-app
+    - name: frontend-service
       pipelines:
         integration:
           bindings:
-          - stage-full-stack-frontend-app-binding
+          - stage-full-stack-frontend-service-binding
           - github-push-binding
-      source_url: https://github.com/ishitasequeira/frontend-app.git
+      source_url: https://github.com/ishitasequeira/frontend-service.git
       webhook:
         secret:
-          name: webhook-secret-stage-frontend-app
+          name: webhook-secret-stage-frontend-service
           namespace: cicd
-    - name: backend-app
+    - name: backend-service
       pipelines:
         integration:
           bindings:
-          - stage-full-stack-backend-app-binding
+          - stage-full-stack-backend-service-binding
           - github-push-binding
-      source_url: https://github.com/ishitasequeira/backend-app.git
+      source_url: https://github.com/ishitasequeira/backend-service.git
       webhook:
         secret:
-          name: webhook-secret-stage-backend-app
+          name: webhook-secret-stage-backend-service
           namespace: cicd
   name: stage
   pipelines:

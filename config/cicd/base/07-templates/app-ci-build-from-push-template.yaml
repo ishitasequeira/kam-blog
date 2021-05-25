@@ -31,7 +31,7 @@ spec:
     kind: PipelineRun
     metadata:
       creationTimestamp: null
-      name: app-ci-$(uid)
+      name: app-ci-pipeline-run-$(uid)
     spec:
       params:
       - name: REPO
