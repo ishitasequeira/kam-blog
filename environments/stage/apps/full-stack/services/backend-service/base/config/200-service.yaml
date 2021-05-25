@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: backend-service
+    app.kubernetes.io/part-of: full-stack
+  name: backend-service
+  namespace: stage
+spec:
+  ports:
+  - name: http
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app.kubernetes.io/name: backend-service
+    app.kubernetes.io/part-of: full-stack
+status:
+  loadBalancer: {}

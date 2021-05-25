@@ -42,22 +42,6 @@ spec:
     template:
       name: app-ci-template
   - bindings:
-    - ref: stage-full-stack-frontend-service-binding
-    - ref: github-push-binding
-    interceptors:
-    - github:
-        secretRef:
-          secretKey: webhook-secret-key
-          secretName: webhook-secret-stage-frontend-service
-    - cel:
-        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name == 'ishitasequeira/frontend-service')
-        overlays:
-        - expression: body.ref.split('/')[2]
-          key: ref
-    name: app-ci-build-from-push-frontend-service
-    template:
-      name: app-ci-template
-  - bindings:
     - ref: stage-full-stack-backend-service-binding
     - ref: github-push-binding
     interceptors:
@@ -71,6 +55,22 @@ spec:
         - expression: body.ref.split('/')[2]
           key: ref
     name: app-ci-build-from-push-backend-service
+    template:
+      name: app-ci-template
+  - bindings:
+    - ref: stage-full-stack-frontend-service-binding
+    - ref: github-push-binding
+    interceptors:
+    - github:
+        secretRef:
+          secretKey: webhook-secret-key
+          secretName: webhook-secret-stage-frontend-service
+    - cel:
+        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name == 'ishitasequeira/frontend-service')
+        overlays:
+        - expression: body.ref.split('/')[2]
+          key: ref
+    name: app-ci-build-from-push-frontend-service
     template:
       name: app-ci-template
 status:

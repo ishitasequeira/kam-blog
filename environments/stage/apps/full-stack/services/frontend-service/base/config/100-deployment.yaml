@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: frontend-service
+    app.kubernetes.io/part-of: full-stack
+  name: frontend-service
+  namespace: stage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: frontend-service
+      app.kubernetes.io/part-of: full-stack
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/name: frontend-service
+        app.kubernetes.io/part-of: full-stack
+    spec:
+      containers:
+      - image: quay.io/isequeir/frontend-service:latest
+        imagePullPolicy: Always
+        name: frontend-service
+        ports:
+        - containerPort: 8080
+        resources: {} 
+      serviceAccountName: default
+status: {}
