@@ -9,11 +9,15 @@ resources:
 - 03-secrets/git-host-basic-auth-token.yaml
 - 03-secrets/gitops-webhook-secret.yaml
 - 03-secrets/webhook-secret-dev-taxi.yaml
+- 03-secrets/webhook-secret-stage-backend-app.yaml
+- 03-secrets/webhook-secret-stage-frontend-app.yaml
 - 04-tasks/deploy-from-source-task.yaml
 - 05-pipelines/app-ci-pipeline.yaml
 - 05-pipelines/ci-dryrun-from-push-pipeline.yaml
 - 06-bindings/dev-app-taxi-taxi-binding.yaml
 - 06-bindings/github-push-binding.yaml
+- 06-bindings/stage-full-stack-backend-app-binding.yaml
+- 06-bindings/stage-full-stack-frontend-app-binding.yaml
 - 07-templates/app-ci-build-from-push-template.yaml
 - 07-templates/ci-dryrun-from-push-template.yaml
 - 08-eventlisteners/cicd-event-listener.yaml
