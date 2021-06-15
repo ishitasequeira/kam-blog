@@ -2,7 +2,7 @@ apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
   creationTimestamp: null
-  name: stage-full-stack-backend-app-binding
+  name: stage-full-stack-backend-service-binding
   namespace: cicd
 spec:
   params:
