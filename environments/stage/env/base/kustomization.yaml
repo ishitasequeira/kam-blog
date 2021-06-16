@@ -1,4 +1,0 @@
-resources:
-- argocd-admin.yaml
-- stage-environment.yaml
-- stage-rolebinding.yaml
