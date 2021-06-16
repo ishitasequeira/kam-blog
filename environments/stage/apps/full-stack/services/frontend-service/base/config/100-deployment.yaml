@@ -22,7 +22,7 @@ spec:
         app.kubernetes.io/part-of: full-stack
     spec:
       containers:
-      - image: quay.io/isequeir/frontend-service:master-d319b05411733fc802ceea94cc24f488e9a18788
+      - image: quay.io/isequeir/frontend-service:master-6242245743946d45c2736e1b7a38ef4c35f70f04
         imagePullPolicy: Always
         name: frontend-service
         ports:
