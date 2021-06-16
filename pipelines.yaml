@@ -1,0 +1,59 @@
+config:
+  argocd:
+    namespace: openshift-gitops
+  pipelines:
+    name: cicd
+environments:
+- apps:
+  - name: app-taxi
+    services:
+    - name: taxi
+      pipelines:
+        integration:
+          bindings:
+          - dev-app-taxi-taxi-binding
+          - github-push-binding
+      source_url: https://github.com/ishitasequeira/taxi.git
+      webhook:
+        secret:
+          name: webhook-secret-dev-taxi
+          namespace: cicd
+  name: dev
+  pipelines:
+    integration:
+      bindings:
+      - github-push-binding
+      template: app-ci-template
+- apps:
+  - name: full-stack
+    services:
+    - name: backend-service
+      pipelines:
+        integration:
+          bindings:
+          - stage-full-stack-backend-service-binding
+          - github-push-binding
+      source_url: https://github.com/ishitasequeira/backend-service.git
+      webhook:
+        secret:
+          name: webhook-secret-stage-backend-service
+          namespace: cicd
+    - name: frontend-service
+      pipelines:
+        integration:
+          bindings:
+          - stage-full-stack-frontend-service-binding
+          - github-push-binding
+      source_url: https://github.com/ishitasequeira/frontend-service.git
+      webhook:
+        secret:
+          name: webhook-secret-stage-frontend-service
+          namespace: cicd
+  name: stage
+  pipelines:
+    integration:
+      bindings:
+      - github-push-binding
+      template: app-ci-template
+gitops_url: https://github.com/ishitasequeira/kam-blog.git
+version: 1
