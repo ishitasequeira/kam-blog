@@ -27,17 +27,6 @@ environments:
 - apps:
   - name: full-stack
     services:
-    - name: frontend-service
-      pipelines:
-        integration:
-          bindings:
-          - stage-full-stack-frontend-service-binding
-          - github-push-binding
-      source_url: https://github.com/ishitasequeira/frontend-service.git
-      webhook:
-        secret:
-          name: webhook-secret-stage-frontend-service
-          namespace: cicd
     - name: backend-service
       pipelines:
         integration:
@@ -48,6 +37,17 @@ environments:
       webhook:
         secret:
           name: webhook-secret-stage-backend-service
+          namespace: cicd
+    - name: frontend-service
+      pipelines:
+        integration:
+          bindings:
+          - stage-full-stack-frontend-service-binding
+          - github-push-binding
+      source_url: https://github.com/ishitasequeira/frontend-service.git
+      webhook:
+        secret:
+          name: webhook-secret-stage-frontend-service
           namespace: cicd
   name: stage
   pipelines:
