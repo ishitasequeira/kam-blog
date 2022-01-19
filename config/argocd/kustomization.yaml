@@ -5,3 +5,4 @@ resources:
 - dev-env-app.yaml
 - stage-env-app.yaml
 - stage-full-stack-app.yaml
+- mc.yaml

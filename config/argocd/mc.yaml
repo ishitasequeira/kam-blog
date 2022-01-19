@@ -1,0 +1,49 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfig
+metadata:
+ creationTimestamp: '2021-08-09T13:05:14Z'
+ generation: 5
+ labels:
+   machineconfiguration.openshift.io/role: worker
+ managedFields:
+   - apiVersion: machineconfiguration.openshift.io/v1
+     fieldsType: FieldsV1
+     fieldsV1:
+       'f:metadata':
+         'f:labels':
+           .: {}
+           'f:machineconfiguration.openshift.io/role': {}
+       'f:spec':
+         .: {}
+         'f:config':
+           .: {}
+           'f:ignition':
+             .: {}
+             'f:config': {}
+             'f:security':
+               .: {}
+               'f:tls': {}
+             'f:timeouts': {}
+             'f:version': {}
+           'f:networkd': {}
+           'f:passwd': {}
+           'f:storage':
+             .: {}
+             'f:files': {}
+           'f:systemd': {}
+         'f:osImageURL': {}
+     manager: Mozilla
+     operation: Update
+     time: '2021-08-09T13:32:53Z'
+ name: 99-zzmytest-mc
+ resourceVersion: '130246'
+ selfLink: /apis/machineconfiguration.openshift.io/v1/machineconfigs/99-zzmytest-mc
+ uid: c13921ba-4dc5-47ec-8ea7-f6ef48b47b45
+spec:
+ config:
+   ignition:
+     config: {}
+     security:
+       tls: {}
+     timeouts: {}
+     version: 3.2.0
